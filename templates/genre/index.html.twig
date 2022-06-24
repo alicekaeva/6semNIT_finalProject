@@ -1,16 +1,16 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Жанр{% endblock %}
+{% block title %}Жанры{% endblock %}
 
 {% block body %}
-    <h1>Жанр</h1>
+    <h1>Жанры</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>ID</th>
                 <th>Название</th>
-                <th>Действия</th>
+                <th>Действие</th>
             </tr>
         </thead>
         <tbody>
@@ -20,7 +20,6 @@
                 <td>{{ genre.name }}</td>
                 <td>
                     <a href="{{ path('app_genre_show', {'id': genre.id}) }}">Показать</a>
-                    <a href="{{ path('app_genre_edit', {'id': genre.id}) }}">Редактировать</a>
                 </td>
             </tr>
         {% else %}

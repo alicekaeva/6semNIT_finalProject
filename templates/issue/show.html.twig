@@ -23,6 +23,23 @@
                 <th>Количество статьей в выпуске</th>
                 <td>{{ issue.articleId.count}}</td>
             </tr>
+            {% if issue.articleId.count > 0 %}
+            <tr>
+                {% if issue.articleId.count == 1 %}
+                    <th>Статья</th>
+                {% else %}
+                    <th>Статьи</th>
+                {% endif %}
+                <td>{% for article in issue.articleId %}
+                        {% if article == issue.articleId[issue.articleId.count-1] %}
+                            {{ article }}
+                        {% else %}
+                            {{ article }},
+                        {% endif %}
+                    {% endfor %}
+                </td>
+            </tr>
+            {% endif %}
         </tbody>
     </table>
 

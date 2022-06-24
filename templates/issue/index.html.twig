@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Выпуск{% endblock %}
+{% block title %}Выпуски{% endblock %}
 
 {% block body %}
-    <h1>Выпуск</h1>
+    <h1>Выпуски</h1>
 
     <table class="table">
         <thead>
@@ -11,8 +11,7 @@
                 <th>ID</th>
                 <th>Название</th>
                 <th>Месяц</th>
-                <th>Количество статей в выпуске</th>
-                <th>Действия</th>
+                <th>Действие</th>
             </tr>
         </thead>
         <tbody>
@@ -21,10 +20,8 @@
                 <td>{{ issue.id }}</td>
                 <td>{{ issue.name }}</td>
                 <td>{{ issue.month }}</td>
-                <td>{{ issue.articleId.count }}</td>
                 <td>
                     <a href="{{ path('app_issue_show', {'id': issue.id}) }}">Показать</a>
-                    <a href="{{ path('app_issue_edit', {'id': issue.id}) }}">Редактировать</a>
                 </td>
             </tr>
         {% else %}

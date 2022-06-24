@@ -1,16 +1,16 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Статья{% endblock %}
+{% block title %}Статьи{% endblock %}
 
 {% block body %}
-    <h1>Статья</h1>
+    <h1>Статьи</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>ID</th>
                 <th>Название</th>
-                <th>Действия</th>
+                <th>Действие</th>
             </tr>
         </thead>
         <tbody>
@@ -20,7 +20,6 @@
                 <td>{{ article.name }}</td>
                 <td>
                     <a href="{{ path('app_article_show', {'id': article.id}) }}">Показать</a>
-                    <a href="{{ path('app_article_edit', {'id': article.id}) }}">Изменить</a>
                 </td>
             </tr>
         {% else %}
