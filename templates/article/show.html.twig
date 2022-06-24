@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+    {% extends 'base.html.twig' %}
 
 {% block title %}Article{% endblock %}
 
@@ -14,6 +14,10 @@
             <tr>
                 <th>Name</th>
                 <td>{{ article.name }}</td>
+            </tr>
+            <tr>
+                <th>Жанр</th>
+                <td>{{ article.genreId }}</td>
             </tr>
         </tbody>
     </table>

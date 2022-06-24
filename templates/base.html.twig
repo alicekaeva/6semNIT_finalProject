@@ -14,6 +14,16 @@
         {% endblock %}
     </head>
     <body>
+    <a href="/">Главная</a>
+    {% if app.request.get('_route') != 'app_login' and app.request.get('_route') != 'app_register' %}
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            <a href="/article">абоба</a>
+            <a href="/logout">Выйти</a><br>
+        {% else %}
+            <a href="/login">Логин</a>
+            <a href="/register">Регистрация</a><br>
+        {% endif %}
+    {% endif %}
         {% block body %}{% endblock %}
     </body>
 </html>

@@ -11,6 +11,7 @@
                 <th>Id</th>
                 <th>Name</th>
                 <th>Month</th>
+                <th>Количество статей</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -20,6 +21,7 @@
                 <td>{{ issue.id }}</td>
                 <td>{{ issue.name }}</td>
                 <td>{{ issue.month }}</td>
+                <td>{{ issue.articleId.count }}</td>
                 <td>
                     <a href="{{ path('app_issue_show', {'id': issue.id}) }}">show</a>
                     <a href="{{ path('app_issue_edit', {'id': issue.id}) }}">edit</a>
