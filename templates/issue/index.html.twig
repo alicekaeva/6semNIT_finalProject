@@ -1,18 +1,18 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Issue index{% endblock %}
+{% block title %}Выпуск{% endblock %}
 
 {% block body %}
-    <h1>Issue index</h1>
+    <h1>Выпуск</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Month</th>
-                <th>Количество статей</th>
-                <th>actions</th>
+                <th>ID</th>
+                <th>Название</th>
+                <th>Месяц</th>
+                <th>Количество статей в выпуске</th>
+                <th>Действия</th>
             </tr>
         </thead>
         <tbody>
@@ -23,17 +23,17 @@
                 <td>{{ issue.month }}</td>
                 <td>{{ issue.articleId.count }}</td>
                 <td>
-                    <a href="{{ path('app_issue_show', {'id': issue.id}) }}">show</a>
-                    <a href="{{ path('app_issue_edit', {'id': issue.id}) }}">edit</a>
+                    <a href="{{ path('app_issue_show', {'id': issue.id}) }}">Показать</a>
+                    <a href="{{ path('app_issue_edit', {'id': issue.id}) }}">Редактировать</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="4">no records found</td>
+                <td colspan="4">Записей не найдено</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('app_issue_new') }}">Create new</a>
+    <a href="{{ path('app_issue_new') }}">Создать новую запись</a>
 {% endblock %}

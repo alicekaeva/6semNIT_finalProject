@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Финальный проект{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         {% block stylesheets %}
@@ -14,13 +14,15 @@
         {% endblock %}
     </head>
     <body>
-    <a href="/">Главная</a>
     {% if app.request.get('_route') != 'app_login' and app.request.get('_route') != 'app_register' %}
         {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-            <a href="/article">абоба</a>
+            <a href="/article">Статьи</a>
+            <a href="/author">Авторы</a>
+            <a href="/genre">Жанры</a>
+            <a href="/issue">Выпуски</a>
             <a href="/logout">Выйти</a><br>
         {% else %}
-            <a href="/login">Логин</a>
+            <a href="/login">Войти</a>
             <a href="/register">Регистрация</a><br>
         {% endif %}
     {% endif %}

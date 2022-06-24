@@ -1,16 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Article index{% endblock %}
+{% block title %}Статья{% endblock %}
 
 {% block body %}
-    <h1>Article index</h1>
+    <h1>Статья</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>actions</th>
+                <th>ID</th>
+                <th>Название</th>
+                <th>Жанр</th>
+                <th>Действия</th>
             </tr>
         </thead>
         <tbody>
@@ -18,18 +19,19 @@
             <tr>
                 <td>{{ article.id }}</td>
                 <td>{{ article.name }}</td>
+                <td>{{ article.genreId }}</td>
                 <td>
-                    <a href="{{ path('app_article_show', {'id': article.id}) }}">show</a>
-                    <a href="{{ path('app_article_edit', {'id': article.id}) }}">edit</a>
+                    <a href="{{ path('app_article_show', {'id': article.id}) }}">Показать</a>
+                    <a href="{{ path('app_article_edit', {'id': article.id}) }}">Изменить</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="3">no records found</td>
+                <td colspan="3">Записей не найдено</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('app_article_new') }}">Create new</a>
+    <a href="{{ path('app_article_new') }}">Создать новую запись</a>
 {% endblock %}
