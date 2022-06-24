@@ -10,7 +10,6 @@
             <tr>
                 <th>ID</th>
                 <th>Название</th>
-                <th>Жанр</th>
                 <th>Действия</th>
             </tr>
         </thead>
@@ -19,7 +18,6 @@
             <tr>
                 <td>{{ article.id }}</td>
                 <td>{{ article.name }}</td>
-                <td>{{ article.genreId }}</td>
                 <td>
                     <a href="{{ path('app_article_show', {'id': article.id}) }}">Показать</a>
                     <a href="{{ path('app_article_edit', {'id': article.id}) }}">Изменить</a>

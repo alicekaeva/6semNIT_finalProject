@@ -15,6 +15,21 @@
                 <th>ФИО</th>
                 <td>{{ author.name }}</td>
             </tr>
+            <tr>
+                {% if author.articleId.count ==1 %}
+                    <th>Статья</th>
+                {% else %}
+                    <th>Статьи</th>
+                {% endif %}
+                <td>{% for article in author.articleId %}
+                        {% if article == author.articleId[author.articleId.count-1] %}
+                            {{ article }}
+                        {% else %}
+                            {{ article }},
+                        {% endif %}
+                    {% endfor %}
+                </td>
+            </tr>
         </tbody>
     </table>
 

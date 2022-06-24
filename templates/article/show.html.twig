@@ -19,6 +19,21 @@
                 <th>Жанр</th>
                 <td>{{ article.genreId }}</td>
             </tr>
+            <tr>
+                {% if article.authorId.count ==1 %}
+                <th>Автор</th>
+                {% else %}
+                <th>Авторы</th>
+                {% endif %}
+                <td>{% for author in article.authorId %}
+                        {% if author == article.authorId[article.authorId.count-1] %}
+                            {{ author }}
+                        {% else %}
+                            {{ author }},
+                        {% endif %}
+                    {% endfor %}
+                </td>
+            </tr>
         </tbody>
     </table>
 
